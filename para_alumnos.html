@@ -113,6 +113,69 @@
 
 <script>
 	// Agregar las instrucciones JS para resolver el ejercicio aquí.
+		
+	//Si el campo de texto se encuentra vacío, se debe mostrar un alert que diga "Debe ingresar un selector jQuery!".
+	//Hint: Utiliza el método .val()
+	
+	$(document).ready(function() {
+	    $("#boton").click(function(event) {
+	        // this.append wouldn't work
+	        if( $("input:text").val()== "" ){
+	        	alert("Debe ingresar un selector jQuery!");
+	    	}else{
+
+	    		try{
+	    		a = eval($("input:text").val()) // Valores
+
+	    		
+	    		console.log(a)
+	    		
+	    		console.log("leyo")
+	    		console.log($("input:text").val())
+	    		//Si el campo de texto NO se encuentra vacío, se debe evaluar el contenido.
+				//Hint: Utilizar el método eval().
+	    		
+	    		
+	    		//Si el campo de texto contiene un selector válido:
+				//Destacar los elementos seleccionados.
+				//Hint: Utiliza fadeIn y fadeOut o un método de tu elección.
+
+				//$('#div1').fadeOut();
+    			//$('#div1').fadeIn();
+    			a.fadeOut();
+    			a.fadeIn();
+    			$('.historial').append('<p>'+$("input:text").val()+'</p>')
+    			$('.seleccionados').append('<p>'+a.length+'</p>')
+    			$('input:text').val("")
+
+    			
+
+	
+
+				//Agregar el selector ingresado al div con class="historial" junto con la cantidad de elementos selecionados en el div con class="seleccionados".
+				//Hint: Utiliza el método .append()
+				//Limpiar el contenido del campo de texto.
+
+
+
+
+				}catch(a){
+					//Si el campo de texto contiene texto que no corresponde a un selector, simplemente debe limpiar el texto ingresado.
+					alert("Debe ingresar un id o clase disponible");
+					$('input:text').val("")
+				}
+
+	    		
+	    	}
+	    });
+	});
+
+
+	
+
+	
+
+	
 </script>
 
 </body>
